@@ -6,7 +6,7 @@ function loginUser() {
     let password =
         document.getElementById("password").value;
 
-    fetch("http://localhost:5000/login", {
+    fetch("https://expense-backend-f1iv.onrender.com/login", {
 
         method: "POST",
 

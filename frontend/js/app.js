@@ -14,7 +14,7 @@ function addExpense() {
 
     if(editId == null) {
 
-        fetch("http://localhost:5000/addExpense", {
+        fetch("https://expense-backend-f1iv.onrender.com/addExpense", {
 
             method: "POST",
 
@@ -48,7 +48,7 @@ function addExpense() {
 
     else {
 
-        fetch(`http://localhost:5000/updateExpense/${editId}`, {
+        fetch(`https://expense-backend-f1iv.onrender.com/updateExpense/${editId}`, {
 
             method: "PUT",
 
@@ -90,7 +90,7 @@ function loadExpenses() {
     let userId =
     localStorage.getItem("userId");
 
-    fetch(`http://localhost:5000/expenses/${userId}`)
+    fetch(`https://expense-backend-f1iv.onrender.com/expenses/${userId}`)
 
     .then(response => response.json())
 
@@ -230,7 +230,7 @@ function loadExpenses() {
 }
 function deleteExpense(id) {
 
-    fetch(`http://localhost:5000/deleteExpense/${id}`, {
+    fetch(`https://expense-backend-f1iv.onrender.com/deleteExpense/${id}`, {
 
         method: "DELETE"
 
