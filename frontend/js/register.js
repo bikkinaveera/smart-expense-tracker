@@ -9,7 +9,7 @@ function registerUser() {
     let password =
         document.getElementById("password").value;
 
-    fetch("http://localhost:5000/register", {
+    fetch("https://expense-backend-fi1v.onrender.com/register?t=" + new Date().getTime(), {
 
         method: "POST",
 
