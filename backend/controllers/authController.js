@@ -26,6 +26,8 @@ const registerUser = async (req, res) => {
 
             if(err){
 
+                console.log(err);
+
                 res.send("Registration Failed");
 
             }
