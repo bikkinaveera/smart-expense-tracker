@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <script>
+
+        let token =
+            localStorage.getItem("token");
+
+        if(!token){
+
+            alert("Please Login First");
+
+            window.location.href = "login.html";
+
+        }
+
+    </script>
+
+
+
+    <h1>Expense Dashboard</h1>
+
+
+
+    <div class="dashboard">
+
+        <div class="card">
+
+            <h2>Total Expense</h2>
+
+            <p id="totalExpense">₹0</p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>Monthly Budget</h2>
+
+            <p id="budget">₹10000</p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h2>Remaining</h2>
+
+            <p id="remaining">₹0</p>
+
+        </div>
+
+    </div>
+
+
+
+    <h2>Add Expense</h2>
+
+
+
+    <input type="number"
+           id="amount"
+           placeholder="Amount">
+
+
+
+    <select id="category">
+
+        <option>Food</option>
+
+        <option>Travel</option>
+
+        <option>Shopping</option>
+
+        <option>Bills</option>
+
+    </select>
+
+
+
+    <button onclick="addExpense()">
+
+        Save Expense
+
+    </button>
+
+
+
+    <button onclick="logoutUser()">
+
+        Logout
+
+    </button>
+
+
+
+    <br><br>
+
+
+
+    <div style="
+        display:flex;
+        gap:40px;
+        align-items:flex-start;
+    ">
+
+
+
+        <div>
+
+            <h2>Expense List</h2>
+
+            <table border="1"
+                   width="600px"
+                   id="expenseTable">
+
+                <tr>
+
+                    <th>Amount</th>
+
+                    <th>Category</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+
+
+        <div>
+
+            <h2>Expense Analytics</h2>
+
+            <div style="
+                width:300px;
+                height:300px;
+            ">
+
+                <canvas id="expenseChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/app.js"></script>
+
+
+
+    <script>
+
+        loadExpenses();
+
+    </script>
+
+</body>
+
+</html>
